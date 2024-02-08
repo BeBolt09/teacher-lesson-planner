@@ -8,9 +8,14 @@ import {
 
 const MODEL_NAME = "gemini-pro";
 const API_KEY = "AIzaSyA_dw6uJmAVV1gd2Ta1JCtU7ciOA7vIZs0";
-export default function GenerativeAi() {
+
+interface GenerativeAiProps {
+    fullText: string;
+}
+
+export default function GenerativeAi({fullText}: GenerativeAiProps) {
     const [generatedResponse, setGeneratedResponse] = useState("");
-    const [inputText, setInputText] = useState("");
+    // const [inputText, setInputText] = useState("");
 
     const handleButtonClick = async () => {
         const genAI = new GoogleGenerativeAI(API_KEY);
@@ -30,7 +35,7 @@ export default function GenerativeAi() {
             { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
         ];
 
-        const parts = [{ text: inputText }];
+        const parts = [{ text: fullText }];
 
         const result = await model.generateContent({
             contents: [{ role: "user", parts }],
@@ -47,12 +52,11 @@ export default function GenerativeAi() {
         <>
             <div className='flex flex-col items-center pt-44'>
                 <div className='w-80'>
-                    <input
-                        id="inputField"
+                    {/* <input
                         type="text"
                         className='w-full p-4 border-2 border-blue-600 my-5 rounded-lg'
                         onChange={(e) => setInputText(e.target.value)}
-                    />
+                    /> */}
                 </div>
                 <button onClick={handleButtonClick} className='border-2 border-blue-600 rounded-lg my-5 hover:bg-blue-600 hover:text-white'>
                     <p className='p-2'>
