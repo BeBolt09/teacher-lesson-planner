@@ -1,21 +1,26 @@
-import { SetStateAction, useState } from 'react';
-import GenerativeAi from "./components/GenerativeAi"
-import Form from "./components/Form"
+import { Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import LessonPlanner from './pages/LessonPlanner'
 
 function App() {
-  const [fullText, setFullText] = useState(
-    'The duration is : [ ], the grade level is : [ ], the subject is: [ ]'
-);
 
-const updateFullText = (newText: SetStateAction<string>) => {
-    setFullText(newText);
-};
   return (
     <>
-      <Form updateFullText={updateFullText}/>
-      <GenerativeAi fullText={fullText} />
+      <Routes>
+        <Route path="/" element={<Navbar/>}>
+          <Route path="/lesson-planner" element={<LessonPlanner />} />
+          <Route path="/home" element={<Home />} />
+        </Route>
+      </Routes>
     </>
   )
 }
 
 export default App
+
+    // <>
+    //   <Navbar/>
+    //   <Home/>
+    //   {/* <LessonPlanner/> */}
+    // </>

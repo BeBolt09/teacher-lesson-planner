@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background-color: black;
+    background-image: url('/Background-from-karsten-winegeart.jpg');
+    background-size: cover;
+    background-position: center 1500vh;
+    background-attachment: fixed;
+}

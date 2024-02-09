@@ -10,8 +10,7 @@ export default function Form({ updateFullText }:FormProps) {
     const [subject, setSubject] = useState('');
 
     const handleSubmit = () => {
-        const newText = `The duration is: ${duration}, the grade level is: ${gradeLevel}, the subject is: ${subject}, 
-                        Make a lesson plan considering those factors and give time frames`;
+        const newText = `Make a lesson plan considering those factors and give time frames. If there are multiple lessons, describe each one. The duration is: ${duration}, the grade level is: ${gradeLevel}, the subject is: ${subject}, `;
         updateFullText(newText);
     };
 

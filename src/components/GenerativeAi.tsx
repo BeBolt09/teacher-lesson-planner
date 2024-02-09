@@ -66,7 +66,7 @@ export default function GenerativeAi({fullText}: GenerativeAiProps) {
             </div>
 
             <div className='flex flex-col items-center my-10 px-64 '>
-                <p className='p-2 my-10 rounded-lg border-2 border-blue-600'><ReactMarkdown>{generatedResponse}</ReactMarkdown></p>
+                <p className='p-2 my-10 rounded-lg border-2 border-blue-600 bg-white'><ReactMarkdown>{generatedResponse}</ReactMarkdown></p>
             </div>
         </>
     );
