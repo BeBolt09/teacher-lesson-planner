@@ -15,12 +15,12 @@ const Navbar: React.FC = () => {
             <Link to="/lesson-planner" className="text-white hover:text-gray-300">Demo</Link>
           </li>
           <li>
-            <a href="#" className="text-white border-2 border-blue-600 p-4 rounded-xl hover:border-blue-800">
+            <a href="/signin" className="text-white border-2 border-blue-600 p-4 rounded-xl hover:border-blue-800">
                 Sign In
             </a>
           </li>
           <li>
-            <a href="#" className="text-white bg-blue-600 p-4 rounded-xl hover:bg-blue-800">
+            <a href="/signup" className="text-white bg-blue-600 p-4 rounded-xl hover:bg-blue-800">
                 Sign Up
             </a>
           </li>
