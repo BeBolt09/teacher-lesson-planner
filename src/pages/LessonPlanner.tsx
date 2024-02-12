@@ -12,9 +12,13 @@ const updateFullText = (newText: SetStateAction<string>) => {
 };
   return (
     <>
-      <div>
-        <Form updateFullText={updateFullText}/>
-        <GenerativeAi fullText={fullText} />
+      <div className=''>
+        <div className='w-full'>
+          <Form updateFullText={updateFullText}/>
+        </div>
+        <div className='w-full'>
+          <GenerativeAi fullText={fullText} />
+        </div>
       </div>
     </>
   )

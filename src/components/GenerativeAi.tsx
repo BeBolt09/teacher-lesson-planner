@@ -58,14 +58,14 @@ export default function GenerativeAi({fullText}: GenerativeAiProps) {
                         onChange={(e) => setInputText(e.target.value)}
                     /> */}
                 </div>
-                <button onClick={handleButtonClick} className='border-2 border-blue-600 rounded-lg my-5 hover:bg-blue-600 hover:text-white'>
+                <button onClick={handleButtonClick} className='text-white border-2 border-blue-600 rounded-lg my-5 hover:bg-blue-600 hover:text-white'>
                     <p className='p-2'>
                         Ask AI
                     </p>
                 </button>
             </div>
 
-            <div className='flex flex-col items-center my-10 px-64 '>
+            <div className='flex flex-col items-center my-10 px-10'>
                 <p className='p-2 my-10 rounded-lg border-2 border-blue-600 bg-white'><ReactMarkdown>{generatedResponse}</ReactMarkdown></p>
             </div>
         </>
