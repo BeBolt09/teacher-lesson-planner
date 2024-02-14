@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client';
+// import { createRoot } from 'react-dom/client';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 import * as React from "react";
@@ -8,7 +8,7 @@ import './index.css'
 
 import App from "./App";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Auth0Provider
@@ -22,6 +22,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-
-
