@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import jsPDF from 'jspdf';
 import ReactMarkdown from 'react-markdown';
 import {
   GoogleGenerativeAI,
@@ -46,18 +47,18 @@ export default function GenerativeAi({fullText}: GenerativeAiProps) {
         const response = result.response;
         setGeneratedResponse(response.text());
 
+        
+        setTimeout(() => {
+            const pdf = new jsPDF();
+            pdf.text(generatedResponse, 10, 10); // Add text to the PDF
+            pdf.save("generatedResponse");
+        }, 10000);
+
     };
 
     return (
         <>
             <div className='flex flex-col items-center pt-44'>
-                <div className='w-80'>
-                    {/* <input
-                        type="text"
-                        className='w-full p-4 border-2 border-blue-600 my-5 rounded-lg'
-                        onChange={(e) => setInputText(e.target.value)}
-                    /> */}
-                </div>
                 <button onClick={handleButtonClick} className='text-white border-2 border-blue-600 rounded-lg my-5 hover:bg-blue-600 hover:text-white'>
                     <p className='p-2'>
                         Ask AI
