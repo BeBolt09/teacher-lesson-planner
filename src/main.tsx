@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <BrowserRouter>
       <Auth0Provider
         domain="dev-m3xxv6waisu1zswn.us.auth0.com"
-        clientId="ndOQW72PW6byotU7YQn2fiHHB2JApRdf"
+        clientId="vwfrUgGXNlfgiVgMUyvxISJOPd87nj2I"
         authorizationParams={{
           redirect_uri: window.location.origin
         }}>
